@@ -1,10 +1,10 @@
 import React from 'react'
-import {useGameProvider} from "../../context";
+import {useGameContext} from "../../hooks";
 import {Cell} from "../Cell/Cell";
 import styles from './Grid.module.css'
 
 export const Grid = () => {
-  const { gameStore } = useGameProvider()
+  const { gameStore } = useGameContext()
 
   return (
     <div className={styles.grid}>

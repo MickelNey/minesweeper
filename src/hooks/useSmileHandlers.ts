@@ -1,9 +1,9 @@
 import {FieldService, GameStep} from "../api";
-import {useGameProvider} from "../context";
+import {useGameContext} from "./useGameContext";
 import {useState} from "react";
 
 export const useSmileHandlers = () => {
-  const {setGameState, gameStore }= useGameProvider()
+  const {setGameState, gameStore }= useGameContext()
   const [isMouseDown, setIsMouseDown] = useState(false)
 
   const handleOnMouseDown = () => {

@@ -11,6 +11,6 @@ const getIconPathByDigit = (time: number, digitsCount: number): number[] => {
   return [...digits.reverse()]
 }
 
-export const getDigitPathByDigits = (time: number, digitsCount: number): string[] => {
+export const getDigitPathByNumber = (time: number, digitsCount: number): string[] => {
   return getIconPathByDigit(time, digitsCount).map(digit => `/digit_icons/${digit}.png`)
 }

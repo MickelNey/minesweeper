@@ -1,18 +1,10 @@
 import React from 'react'
 import './App.css'
-import {Grid} from "./components/Grid/Grid";
-import {Smile} from "./components/Smile/Smile";
-import {Timer} from "./components/Timer/Timer";
-import {MinesCounter} from "./components/MinesCounter/MinesCounter";
-import {useGameProvider} from "./context";
+import {Grid, Smile, Timer, MinesCounter} from "./components";
+import {useGameContext} from "hooks";
 import divider from './assets/divider.png'
 
 function App() {
-
-  const { gameStore} = useGameProvider()
-
-  console.log(gameStore)
-
   return (
       <div className="App">
         <div className='menu'>

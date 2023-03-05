@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import {useGameProvider} from "../context";
+import {useGameContext} from "./useGameContext";
 import {GameStep} from "../api";
 
 export const useTime = () => {
   const [time, setTime] = useState(0)
 
-  const { gameStore } = useGameProvider()
+  const { gameStore } = useGameContext()
 
   useEffect(() => {
     if (gameStore.step === GameStep.WAIT_TURN && time < 999) {

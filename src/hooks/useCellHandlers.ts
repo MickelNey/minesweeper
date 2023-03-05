@@ -1,10 +1,10 @@
-import {useGameProvider} from "../context";
+import {useGameContext} from "./useGameContext";
 import React, {useState} from "react";
 import {CellLocation, FieldService, GameStep, GameService } from "../api";
 
 export const useCellHandlers = (cl: CellLocation) => {
 
-  const { gameStore, setGameState} = useGameProvider()
+  const { gameStore, setGameState} = useGameContext()
   const [isMouseDown, setIsMouseDown] = useState(false)
 
   const handleLeave = () => {

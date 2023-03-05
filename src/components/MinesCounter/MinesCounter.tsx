@@ -1,5 +1,5 @@
 import React from 'react'
-import {getDigitPathByDigits} from "../../helpers/getIconPathByDigit";
+import {getDigitPathByNumber} from "../../helpers/getIconPathByDigit";
 import {useFlagsCount} from "../../hooks";
 import styles from './MinesCounter.module.css'
 
@@ -8,7 +8,7 @@ export const MinesCounter = () => {
 
   return (
     <div className={styles.minesCounter}>
-      {getDigitPathByDigits(minesCount, 3)
+      {getDigitPathByNumber(minesCount, 3)
         .map(digit =>
           <img src={digit} alt={digit}/>)
       }

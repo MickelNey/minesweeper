@@ -33,7 +33,6 @@ export interface IField {
 export enum GameStep {
   NOT_STARTED,
   WAIT_TURN,
-  CLICK_ON_CELL,
   LOST,
   WON
 }

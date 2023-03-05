@@ -1,7 +1,7 @@
-import {useFieldContext} from "../context";
+import {useGameProvider} from "../context";
 
 export const useFlagsCount = (): number => {
-  const { gameStore } = useFieldContext()
+  const { gameStore } = useGameProvider()
 
   const count = gameStore.field.minesCount - gameStore.field.flagCount
 

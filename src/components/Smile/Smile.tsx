@@ -1,11 +1,11 @@
 import React from "react";
 import {getSmileByGameStep} from "../../helpers/getSmileByGameStep";
-import {useFieldContext} from "../../context";
+import {useGameProvider} from "../../context";
 import {useSmileHandlers} from "../../hooks";
-import styles from './Smile.module.scss'
+import styles from './Smile.module.css'
 
 export const Smile = () => {
-  const { gameStore } = useFieldContext()
+  const { gameStore } = useGameProvider()
 
   const { handleOnMouseLeave, handleOnMouseDown, handleOnMouseUp, isMouseDown} = useSmileHandlers()
 
@@ -15,7 +15,7 @@ export const Smile = () => {
       onMouseDown={handleOnMouseDown}
       onMouseLeave={handleOnMouseLeave}
     >
-      <img src={getSmileByGameStep(gameStore.step, isMouseDown)} alt={'smile'}/>
+      <img src={getSmileByGameStep(gameStore.step, isMouseDown, gameStore.isClickOnCell)} alt={'smile'}/>
     </button>
   )
 }

@@ -1,9 +1,9 @@
 import {FieldService, GameStep} from "../api";
-import {useFieldContext} from "../context";
+import {useGameProvider} from "../context";
 import {useState} from "react";
 
 export const useSmileHandlers = () => {
-  const {setGameState, gameStore }= useFieldContext()
+  const {setGameState, gameStore }= useGameProvider()
   const [isMouseDown, setIsMouseDown] = useState(false)
 
   const handleOnMouseDown = () => {
@@ -11,7 +11,7 @@ export const useSmileHandlers = () => {
   }
 
   const handleOnMouseUp = () => {
-    setGameState({  field: FieldService.clearField(gameStore.field), step: GameStep.NOT_STARTED} )
+    setGameState({  ...gameStore, field: FieldService.clearField(gameStore.field), step: GameStep.NOT_STARTED} )
     setIsMouseDown(false)
   }
 

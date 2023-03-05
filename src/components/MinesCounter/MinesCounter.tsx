@@ -1,7 +1,7 @@
 import React from 'react'
 import {getDigitPathByDigits} from "../../helpers/getIconPathByDigit";
 import {useFlagsCount} from "../../hooks";
-import styles from './MinesCounter.module.scss'
+import styles from './MinesCounter.module.css'
 
 export const MinesCounter = () => {
   const minesCount = useFlagsCount()

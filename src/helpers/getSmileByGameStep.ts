@@ -1,6 +1,6 @@
 import {GameStep} from "../api";
 
-export const getSmileByGameStep = (smile: GameStep, isMouseDown: boolean) => {
+export const getSmileByGameStep = (smile: GameStep, isMouseOnSmileClick: boolean, isMouseCellClick: boolean = false) => {
   let fileName = ''
 
   switch (smile) {
@@ -8,7 +8,7 @@ export const getSmileByGameStep = (smile: GameStep, isMouseDown: boolean) => {
       fileName = 'smiling'
       break
     case GameStep.WAIT_TURN:
-      fileName = 'smiling'
+      fileName = isMouseCellClick ? 'scared' : 'smiling'
       break
     case GameStep.WON:
       fileName = 'winner'
@@ -16,11 +16,8 @@ export const getSmileByGameStep = (smile: GameStep, isMouseDown: boolean) => {
     case GameStep.LOST:
       fileName = 'loser'
       break
-    case GameStep.CLICK_ON_CELL:
-      fileName = 'scared'
-      break
   }
-  if (isMouseDown) fileName = 'smiling-click'
+  if (isMouseOnSmileClick) fileName = 'smiling-click'
 
   return '/smile_icons/' + fileName + '.png'
 }

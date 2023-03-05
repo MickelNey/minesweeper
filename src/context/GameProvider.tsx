@@ -1,5 +1,5 @@
-import type {GameContextProps} from './FieldContext'
-import {FieldContext} from './FieldContext'
+import type {GameContextProps} from './GameContext'
+import {GameContext} from './GameContext'
 import {getInitial} from "./initial";
 import React, {useState} from "react"
 
@@ -7,7 +7,7 @@ interface GameProviderProps {
   children: React.ReactNode
 }
 
-export const FieldProvider: React.FC<GameProviderProps> = ({ children }) => {
+export const GameProvider: React.FC<GameProviderProps> = ({ children }) => {
   const [gameStore, setGameState] = useState(getInitial())
 
   const value: GameContextProps = React.useMemo(
@@ -15,5 +15,5 @@ export const FieldProvider: React.FC<GameProviderProps> = ({ children }) => {
     [gameStore]
   )
 
-  return <FieldContext.Provider value={value}>{children}</FieldContext.Provider>
+  return <GameContext.Provider value={value}>{children}</GameContext.Provider>
 }

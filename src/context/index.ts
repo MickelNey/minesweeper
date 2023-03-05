@@ -1,2 +1,2 @@
-export { FieldProvider } from './FieldProvider'
-export { useFieldContext } from './useFieldContext'
+export { GameProvider } from './GameProvider'
+export { useGameProvider } from './useGameProvider'

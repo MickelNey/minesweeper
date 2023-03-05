@@ -1,5 +1,5 @@
 import {FieldService, GameStep} from "../api";
-import {GameStore} from "./FieldContext";
+import {GameStore} from "./GameContext";
 
 export const getInitial = (
   rows = 16,
@@ -15,6 +15,7 @@ export const getInitial = (
       openedCells: 0,
       flagCount: 0
     },
+    isClickOnCell: false,
     step: GameStep.NOT_STARTED
   }
 

@@ -6,6 +6,7 @@ import {GameStep} from "../api";
 export type GameStore = {
   step: GameStep
   field: IField
+  isClickOnCell: boolean
 }
 
 export interface GameContextProps {
@@ -13,7 +14,7 @@ export interface GameContextProps {
   setGameState: React.Dispatch<React.SetStateAction<GameStore>>;
 }
 
-export const FieldContext = React.createContext<GameContextProps>({
+export const GameContext = React.createContext<GameContextProps>({
   gameStore: getInitial(),
   setGameState: () => {}
 })
